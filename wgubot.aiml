@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+  <!-- Ensure the bot asks for "Start" initially -->
+  <category>
+    <pattern>*</pattern>
+    <template>Hello! Please type "Start" to begin your career advice in Computer Science.</template>
+  </category>
+
+  <!-- Ask for the user's name when they type 'Start' -->
+  <category>
+    <pattern>Start</pattern>
+    <template>What is your name? Reply with "My name is [Name]"</template>
+  </category>
+
+  <!-- Yes or No questions about liking math -->
+  <category>
+    <pattern>My name is *</pattern>
+    <template>
+      <set name="name">Hello <star/>! Let’s get started exploring different career paths with a Computer Science degree. Math is essential for specific careers in Computer Science. Do you like math? Reply with "Yes" or "No"</set>
+    </template>
+  </category>
+  
+    <!-- People who like math -->
+  <category>
+    <pattern>Yes</pattern>
+    <template>
+      Here is a list of careers for math lovers! Please select one to learn more about it.
+      <button>
+          <text>Software Developer/Engineer</text>
+          <postback>Software</postback>
+      </button>
+      <button>
+          <text>Data Scientist</text>
+          <postback>DataScientist</postback>
+      </button>
+    </template>
+  </category>
+  
+  <!-- People who don't like math -->
+  <category>
+    <pattern>No</pattern>
+    <template>
+      Here is a list of careers for people who don't like math. Please select one to learn more about it.
+      <button>
+          <text>Cybersecurity Analyst</text>
+          <postback>Cybersecurity</postback>
+      </button>
+      <button>
+          <text>Systems Administrator</text>
+          <postback>System</postback>
+      </button>
+      <button>
+          <text>UX/UI Designer</text>
+          <postback>UX</postback>
+      </button>
+    </template>
+  </category>
+
+  <!-- Display information about each career -->
+  <category>
+    <pattern>Software</pattern>
+    <template>
+      Software developers design, create, and maintain software applications and systems. They use programming languages like Java, Python, and C++ to build solutions for businesses and consumers.
+    <link>
+        <text>Learn More</text>
+        <url>https://www.fullstackacademy.com/blog/what-do-software-engineers-do</url>
+    </link>
+    </template>
+  </category>
+
+  <category>
+    <pattern>DataScientist</pattern>
+    <template>
+      Data scientists analyze large data sets to identify trends, patterns, and insights. They use statistical and machine learning techniques to help companies make data-driven decisions.
+    <link>
+        <text>Learn More</text>
+        <url>https://www.coursera.org/articles/what-is-a-data-scientist</url>
+    </link>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Cybersecurity</pattern>
+    <template>
+      Cybersecurity analysts protect an organization’s computer systems and networks from cyber threats. They monitor for security breaches, implement safeguards, and ensure compliance with security protocols.
+    <link>
+        <text>Learn More</text>
+        <url>https://www.coursera.org/articles/cybersecurity-analyst-job-guide</url>
+    </link>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>System</pattern>
+    <template>
+      Systems administrators manage and maintain the IT infrastructure of an organization. They ensure servers, networks, and software run smoothly, performing tasks like troubleshooting and system upgrades.
+    <link>
+        <text>Learn More</text>
+        <url>https://www.splunk.com/en_us/blog/learn/system-administrator-sysadmin-role.html</url>
+    </link>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>UX</pattern>
+    <template>
+      UX/UI designers focus on improving user experience and interface design for websites, apps, and software. They work to ensure that digital products are intuitive, user-friendly, and aesthetically pleasing.
+    <link>
+        <text>Learn More</text>
+        <url>https://careerfoundry.com/en/blog/ux-design/what-does-a-ux-designer-actually-do/</url>
+    </link>
+    </template>
+  </category>
+  
+  </aiml>
